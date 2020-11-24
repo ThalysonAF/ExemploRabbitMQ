@@ -10,7 +10,10 @@ public class Receptor {
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setUri("amqp://...");
+    factory.setUsername("thalyson");
+    factory.setPassword("12345678");
+    factory.setHost("ec2-54-242-14-47.compute-1.amazonaws.com");
+    factory.setVirtualHost("/");
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 

@@ -2,7 +2,7 @@ package br.ufs.dcomp.ExemploRabbitMQ;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.ConnectionFactory; //fábrica de conexões
 
 public class Emissor {
 
@@ -10,9 +10,12 @@ public class Emissor {
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setUri("amqp://...");
-    Connection connection = factory.newConnection();
-    Channel channel = connection.createChannel();
+    factory.setUsername("thalyson");
+    factory.setPassword("12345678");
+    factory.setHost("ec2-54-242-14-47.compute-1.amazonaws.com");
+    factory.setVirtualHost("/");
+    Connection connection = factory.newConnection(); //estabelece conexão
+    Channel channel = connection.createChannel(); //Cria os canais
 
                       //(queue-name, durable, exclusive, auto-delete, params); 
     channel.queueDeclare(QUEUE_NAME, false,   false,     false,       null);
