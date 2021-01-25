@@ -12,7 +12,11 @@ public class Emissor {
     ConnectionFactory factory = new ConnectionFactory();
     factory.setUsername("thalyson");
     factory.setPassword("12345678");
+<<<<<<< HEAD
     factory.setHost("ec2-54-174-158-151.compute-1.amazonaws.com");
+=======
+    factory.setHost("ec2-54-242-14-47.compute-1.amazonaws.com");
+>>>>>>> e6efaa494795c3e7ccd509adb0d7ad3f309cdaa1
     factory.setVirtualHost("/");
     Connection connection = factory.newConnection(); //estabelece conexão
     Channel channel = connection.createChannel(); //Cria os canais
